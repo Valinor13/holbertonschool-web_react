@@ -1,1 +1,0 @@
-This is the Typescript project located in the Holberton web react repository.
