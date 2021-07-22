@@ -18,5 +18,4 @@ const student2: Student = {
     age: 34,
     location: 'Tulsa',
 };
-
-const studentsList = [student1, student2];
+let studentsList:object[] = [student1, student2];
