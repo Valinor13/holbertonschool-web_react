@@ -12,6 +12,9 @@ interface TeacherInterface {
 }
 
 class Director implements DirectorInterface {
+    static workDirectorTasks(): Function {
+        throw new Error("Method not implemented.");
+    }
 
     workFromHome(): string {
         return 'Working from home';
@@ -27,6 +30,9 @@ class Director implements DirectorInterface {
 }
 
 class Teacher implements TeacherInterface {
+    static workTeacherTasks(): Function {
+        throw new Error("Method not implemented.");
+    }
 
     workFromHome(): string {
         return 'Cannot work from home';
@@ -47,4 +53,15 @@ function createEmployee(salary: number | string): Director | Teacher {
     }
 
     return new Director;
+}
+
+function isDirector(employee: Director | Teacher): employee is Director {
+    return employee instanceof Director;
+}
+
+function executeWork(employee: Director | Teacher): Function {
+    if (employee instanceof Director) {
+        return Director.workDirectorTasks();
+    }
+    return Teacher.workTeacherTasks();
 }
