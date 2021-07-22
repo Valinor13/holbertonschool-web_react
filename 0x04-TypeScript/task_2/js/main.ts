@@ -65,3 +65,12 @@ function executeWork(employee: Director | Teacher): Function {
     }
     return Teacher.workTeacherTasks();
 }
+
+type Subjects = 'Math' | 'History';
+
+function teachClass(todayClass: 'Math' | 'History'): string {
+    if (todayClass === 'Math') {
+        return 'Teaching Math';
+    }
+    return 'Teaching History';
+}
