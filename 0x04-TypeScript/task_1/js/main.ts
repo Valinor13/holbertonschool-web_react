@@ -1,10 +1,12 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 interface Teacher {
-    readonly firstName: string,
-    readonly lastName: string,
-    fullTimeEmployee: boolean,
-    yearsOfExperience?: number,
-    location: string,
-    [key: string]: any, 
+    readonly firstName: string;
+    readonly lastName: string;
+    fullTimeEmployee: boolean;
+    yearsOfExperience?: number;
+    location: string;
+    [key: string]: any; 
 };
 
 interface Directors extends Teacher {
@@ -15,12 +17,12 @@ function printTeacher(firstName: string, lastName: string): string {
     return firstName.charAt(0).concat('. ', lastName);
 }
 
-interface Student {
+interface StudentInterface {
     firstName: string;
     lastName: string;
 }
 
-class StudentClass implements Student {
+class StudentClass implements StudentInterface {
     firstName: string;
     lastName: string;
     constructor(firstName: string, lastName: string) {
@@ -28,11 +30,11 @@ class StudentClass implements Student {
         this.lastName = lastName;
     }
 
-    workOnHOmework() {
+    workOnHOmework(): string {
         return 'Currently working';
     }
 
-    displayName() {
+    displayName(): string {
         return this.firstName;
     }
 }
