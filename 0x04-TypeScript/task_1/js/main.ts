@@ -1,19 +1,24 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable prefer-const */
+/* eslint-disable @typescript-eslint/class-name-casing */
 interface Teacher {
     readonly firstName: string;
     readonly lastName: string;
     fullTimeEmployee: boolean;
     yearsOfExperience?: number;
     location: string;
-    [key: string]: any; 
+    [key: string]: unknown; 
 };
 
 interface Directors extends Teacher {
     numberOfReports: number;
 }
 
-function printTeacher(firstName: string, lastName: string): string {
+interface printTeacherFunction {
+    (firstName: string, lastName: string): string;
+}
+
+export let printTeacher: printTeacherFunction;
+printTeacher = function (firstName: string, lastName: string): string {
     return firstName.charAt(0).concat('. ', lastName);
 }
 
@@ -22,7 +27,7 @@ interface StudentInterface {
     lastName: string;
 }
 
-class StudentClass implements StudentInterface {
+export class StudentClass implements StudentInterface {
     firstName: string;
     lastName: string;
     constructor(firstName: string, lastName: string) {

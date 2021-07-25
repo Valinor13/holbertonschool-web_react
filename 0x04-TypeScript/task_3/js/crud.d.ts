@@ -1,7 +1,5 @@
 import { RowID, RowElement } from "./interface";
 
-export class Crud {
-    insertRow(row: RowElement): number;
-    deleteRow(rowId: RowID): undefined;
-    updateRow(rowId: RowID, row: RowElement): RowID;
-}
+declare let insertRow: (row: RowElement) => number;
+declare let deleteRow: (rowId: RowID) => void;
+declare let updateRow: (rowId: RowID, row: RowElement) => RowID;

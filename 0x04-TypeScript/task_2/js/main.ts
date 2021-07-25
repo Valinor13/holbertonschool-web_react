@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 interface DirectorInterface {
     workFromHome(): string;
     getToWork(): string;
@@ -47,7 +46,7 @@ class Teacher implements TeacherInterface {
     }
 }
 
-function createEmployee(salary: number | string): Director | Teacher {
+export function createEmployee(salary: number | string): Director | Teacher {
     if (typeof salary === 'number' && salary < 500) {
         return new Teacher;
     }
@@ -55,11 +54,11 @@ function createEmployee(salary: number | string): Director | Teacher {
     return new Director;
 }
 
-function isDirector(employee: Director | Teacher): employee is Director {
+export function isDirector(employee: Director | Teacher): employee is Director {
     return employee instanceof Director;
 }
 
-function executeWork(employee: Director | Teacher): Function {
+export function executeWork(employee: Director | Teacher): Function {
     if (employee instanceof Director) {
         return Director.workDirectorTasks();
     }
@@ -68,7 +67,7 @@ function executeWork(employee: Director | Teacher): Function {
 
 type Subjects = 'Math' | 'History';
 
-function teachClass(todayClass: 'Math' | 'History'): string {
+export function teachClass(todayClass: 'Math' | 'History'): string {
     if (todayClass === 'Math') {
         return 'Teaching Math';
     }
