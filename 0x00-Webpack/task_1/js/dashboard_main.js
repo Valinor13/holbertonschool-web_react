@@ -3,7 +3,7 @@ const _ = require('lodash');
 
 const p1 = $(`<p>Holberton Dashboard</p>`);
 const p2 = $(`<p>Dashboard data for the students</p>`);
-const b1 = $(`<button id="button">Click here to get started</button>`);
+const b1 = $(`<button>Click here to get started</button>`);
 const p3 = $(`<p id="count"></p>`);
 const p4 = $(`<p>Copyright - Holberton School</p>`);
 
@@ -23,4 +23,4 @@ function updateCounter() {
   $('#count').text(`${count} clicks on the button`);
 };
 
-$('#button').click(_.debounce(updateCounter, 1000, { 'leading': true, 'trailing': false }));
+$('button').click(_.debounce(updateCounter, 1000, { 'leading': true, 'trailing': false }));
