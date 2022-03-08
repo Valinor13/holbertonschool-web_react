@@ -23,4 +23,4 @@ function updateCounter() {
   $('#count').text(`${count} clicks on the button`);
 };
 
-$('#button').on("click", _.debounce(updateCounter, 1000, { 'leading': true, 'trailing': false }));
+$('#button').click(_.debounce(updateCounter, 1000, { 'leading': true, 'trailing': false }));
