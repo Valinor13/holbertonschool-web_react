@@ -1,5 +1,5 @@
 import $ from "jquery";
-const _ = require('lodash');
+import _ from "lodash";
 
 const p1 = $(`<p>Holberton Dashboard</p>`);
 const p2 = $(`<p>Dashboard data for the students</p>`);
