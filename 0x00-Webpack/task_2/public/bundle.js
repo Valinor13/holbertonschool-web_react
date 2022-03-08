@@ -168,7 +168,7 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
-eval("module.exports = __webpack_require__.p + \"20aef9c0e0b08e479d7c.jpg\";\n\n//# sourceURL=webpack://task_1/./assets/holberton-logo.jpg?");
+eval("module.exports = __webpack_require__.p + \"e4900fdd05dc99a2603e.jpg\";\n\n//# sourceURL=webpack://task_1/./assets/holberton-logo.jpg?");
 
 /***/ })
 
