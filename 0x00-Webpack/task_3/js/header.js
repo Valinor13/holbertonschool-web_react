@@ -6,6 +6,7 @@ const h1 = $(`<h1>Holberton Dashboard</h1>`);
 
 const hdr = [logo, h1];
 
+$('body').append(`<header></header>`);
 hdr.forEach((element) => $('header').append(element));
 
 console.log('Init header');
