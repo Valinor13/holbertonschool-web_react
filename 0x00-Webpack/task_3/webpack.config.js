@@ -5,9 +5,9 @@ const path = require('path');
 module.exports = {
   mode: "development",
   entry: { 
-    header: './js/header.js',
-    body: './js/body.js',
-    footer: './js/footer.js',
+    header: './modules/header/header.js',
+    body: './modules/body/body.js',
+    footer: './modules/footer/footer.js',
   },
   output: {
     filename: '[name].bundle.js',

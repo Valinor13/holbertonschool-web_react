@@ -1,5 +1,5 @@
 import $ from "jquery";
-import "../css/header.css";
+import "./header.css";
 
 const logo = $(`<div id="logo"></div>`);
 const h1 = $(`<h1>Holberton Dashboard</h1>`);

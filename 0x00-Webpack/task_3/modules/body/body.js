@@ -1,6 +1,6 @@
 import $ from "jquery";
 import _ from "lodash";
-import "../css/body.css";
+import "./body.css";
 
 const p1 = $(`<p>Holberton Dashboard</p>`);
 const p2 = $(`<p>Dashboard data for the students</p>`);
