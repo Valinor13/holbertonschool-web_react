@@ -1,12 +1,18 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 module.exports = {
   mode: "development",
-  entry: './js/dashboard_main.js',
+  entry: { 
+    header: './js/header.js',
+    body: './js/body.js',
+    footer: './js/footer.js',
+  },
   output: {
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'public'),
   },
+  plugins: [new HtmlWebpackPlugin()],
   module: {
     rules: [
       {
@@ -28,5 +34,12 @@ module.exports = {
         ],
       },
     ],
+  },
+  devServer: {
+    static: {
+      directory: path.join(__dirname, './public'),
+    },
+    compress: true,
+    port: 8564,
   },
 };
