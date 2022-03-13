@@ -7,6 +7,7 @@ import Notifications from './Notifications';
 const wrapper = shallow(<Notifications />);
 
 describe('Test suite for Notifications', () => {
+  
   it('tests Notifications renders without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(<Notifications />, div);
