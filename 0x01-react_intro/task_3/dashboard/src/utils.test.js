@@ -1,5 +1,5 @@
-import { getFullYear, getFooterCopy, getLatestNotification } from './utils';
 import { assert } from 'chai';
+import { getFullYear, getFooterCopy, getLatestNotification } from './utils';
 
 describe('Test suite for utils', () => {
 
