@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { assert } from 'chai';
-import shallow from './setupTests';
+import shallow from '../../config/setupTests';
 import Notifications from './Notifications';
 
 const wrapper = shallow(<Notifications />);
