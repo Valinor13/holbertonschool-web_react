@@ -1,0 +1,1 @@
+The React Intro repository contains various states of progress in learning to create my first react app, including a test suite using jest, chai, and enzyme.
