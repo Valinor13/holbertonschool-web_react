@@ -36,4 +36,4 @@ npm run test
 Contributing
 ------------
 
-[Contributing](github.com/Valinor13)
+[Contributing](https://www.github.com/Valinor13)
