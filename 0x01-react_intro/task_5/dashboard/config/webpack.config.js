@@ -5,7 +5,7 @@ module.exports = {
   entry: './src/index.js',
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, './dist'),
+    path: path.resolve(__dirname, '../dist'),
   },
   devtool: 'inline-source-map',
   module: {
@@ -15,7 +15,7 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.jsx?$/,
+        test: /\.m?js$/,
         exclude: /(node_modules|bower_components)/,
         use: {
           loader: 'babel-loader',
@@ -42,7 +42,7 @@ module.exports = {
   },
   devServer: {
     static: {
-      directory: path.join(__dirname, './dist'),
+      directory: path.resolve(__dirname, '../dist'),
     },
     hot: true,
     compress: true,
