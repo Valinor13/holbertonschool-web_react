@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { assert } from 'chai';
 import shallow from '../../config/setupTests';
 import Notifications from './Notifications';
+import NotificationItem from './NotificationItem';
 
 const wrapper = shallow(<Notifications />);
 
@@ -16,7 +17,7 @@ describe('Test suite for Notifications', () => {
   })
 
   it('tests that Notifications renders three list items', () => {
-    const element = wrapper.find('li');
+    const element = wrapper.find(NotificationItem);
     assert.equal(element.length, 3, "> 3 < list items found");
   })
 

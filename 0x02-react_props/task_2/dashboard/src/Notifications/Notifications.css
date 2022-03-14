@@ -21,10 +21,10 @@
   height: 20px;
 }
 
-li[data='default'] {
+li[data-notification-type='default'] {
   color: navy;
 }
 
-li[data='urgent'] {
+li[data-notification-type='urgent'] {
   color: #e11d3f;
 }
