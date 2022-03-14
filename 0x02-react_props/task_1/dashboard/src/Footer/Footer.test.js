@@ -16,7 +16,12 @@ describe('Test suite for rendering the Footer DOM', () => {
   });
 
   it('test that Footer renders with App-footer', () => {
-    const text = wrapper.find('footer');
-    assert.equal(text.length, 1, "More or less than 1 footer found");
+    const element = wrapper.find('footer');
+    assert.equal(element.length, 1, "> 1 < footer found");
+  });
+
+  it('test that Footer renders with text "Copyright"', () => {
+    const element = wrapper.find('p');
+    assert.include(element.text(), "Copyright", "Copyright not found in footer");
   });
 });

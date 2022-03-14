@@ -16,8 +16,17 @@ describe('Test suite for rendering the Login DOM', () => {
   });
 
   it('test that Login renders with App-body', () => {
-    const text = wrapper.find('main');
-    assert.equal(text.length, 1, "More or less than 1 Login found");
+    const element = wrapper.find('main');
+    assert.equal(element.length, 1, "> 1 < Login found");
   });
   
+  it('test that Login renders with input tag', () => {
+    const element = wrapper.find('input');
+    assert.equal(element.length, 2, "> 2 < input tags found");
+  });
+  
+  it('test that Login renders with label tag', () => {
+    const element = wrapper.find('label');
+    assert.equal(element.length, 2, "> 2 < label tags found");
+  });
 });
