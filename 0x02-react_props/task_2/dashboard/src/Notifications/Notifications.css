@@ -1,0 +1,30 @@
+.notifications-div {
+  width: 100%;
+  border: 2px dashed #e11d3f;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.Notifications {
+  padding: 15px;
+}
+
+.close-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.close-button {
+  background-color: white;
+  border: none;
+  height: 20px;
+}
+
+li[data='default'] {
+  color: navy;
+}
+
+li[data='urgent'] {
+  color: #e11d3f;
+}
