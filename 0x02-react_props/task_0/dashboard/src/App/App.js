@@ -1,11 +1,12 @@
 import React from 'react';
-import { getFullYear, getFooterCopy } from '../utils/utils';
-import logo from '../assets/holberton-logo.jpg';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
+      <Header />
       <main className="App-body">
         <div className='login-div'>
           <p>
@@ -24,6 +25,7 @@ function App() {
           </form>
         </div>
       </main>
+      <Footer />
     </div>
   );
 }
