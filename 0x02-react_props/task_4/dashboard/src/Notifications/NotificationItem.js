@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function NotificationItem(props) {
+function NotificationItem({ type, value, html }) {
   return (
-    <li data-notification-type={props.type} dangerouslySetInnerHTML={props.html}>
-      {props.value}
+    <li data-notification-type={type} dangerouslySetInnerHTML={html}>
+      {value}
     </li>
   )
 }

@@ -2,25 +2,25 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
-import Notifcations from '../Notifications/Notifications';
+import Notifications from '../Notifications/Notifications';
 import Logged from '../Login/Logged';
 import './App.css';
 
-function App({ isLoggedIn, displayDrawer}) {
+function App({ isLoggedIn, displayDrawer }) {
   return (
-    <React.Fragment>
-      <div className='menuItem'>
-        <p>Your notifications</p>
-      </div>
-      <div>
-        <Notifcations displayDrawer={displayDrawer} />
-      </div>
-      <div className="App">
+    <div className="App">
+      <div className='full-header'>
+        <div className='full-notifications'>
+          <div className='menuItem'>
+            <p>Your notifications</p>
+          </div>
+          <Notifications displayDrawer={displayDrawer} />
+        </div>
         <Header />
-        <Logged isLoggedIn={isLoggedIn} />
-        <Footer />
       </div>
-    </React.Fragment>
+      <Logged isLoggedIn={isLoggedIn} />
+      <Footer />
+    </div>
   )
 }
 
