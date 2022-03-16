@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import shallow from '../../config/setupTests';
+import Enzyme from '../../config/setupTests';
 import CourseListRow from './CourseListRow';
+
+const shallow = Enzyme.shallow;
 
 describe('Test suite for rendering the CourseListRow component', () => {
 

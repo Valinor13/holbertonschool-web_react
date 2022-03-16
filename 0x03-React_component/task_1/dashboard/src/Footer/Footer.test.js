@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { assert } from 'chai';
-import shallow from '../../config/setupTests';
+import Enzyme from '../../config/setupTests';
 import Footer from './Footer';
 
+const shallow = Enzyme.shallow;
 const wrapper = shallow(<Footer />);
 
 describe('Test suite for rendering the Footer component', () => {
@@ -16,11 +16,11 @@ describe('Test suite for rendering the Footer component', () => {
 
   it('test that Footer renders with App-footer', () => {
     const element = wrapper.find('footer');
-    assert.equal(element.length, 1, "> 1 < footer found");
+    expect(element.length).toBe(1);
   });
 
   it('test that Footer renders with text "Copyright"', () => {
     const element = wrapper.find('p');
-    assert.include(element.text(), "Copyright", "Copyright not found in footer");
+    expect(element.text()).toContain("Copyright");
   });
 });
