@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { jest } from '@jest/globals'
 import { shallow, mount } from '../../config/setupTests';
 import App from './App';
 import Header from '../Header/Header';
@@ -16,6 +17,15 @@ describe('Test suite for rendering the App component', () => {
     console.log('true');
     ReactDOM.unmountComponentAtNode(div);
   });
+
+  it('test that App recognizes ctrl + h keydown event and calls logOut function', () => {
+    const mockLog = jest.spyOn(console, 'log');
+    const keystroke = new KeyboardEvent('keydown', { ctrlKey: true, bubbles: true, key: 'h' })
+    document.dispatchEvent(keystroke);
+    expect(mockLog).toHaveBeenCalledWith('Logging you out');
+    expect(mockLog).toHaveBeenCalledWith('logOut called');
+    jest.restoreAllMocks();
+  })
 
   it('test that App renders with Header component', () => {
     const wrapper = shallow(<App isLoggedIn={true} displayDrawer={true} />);

@@ -61,7 +61,7 @@ App.propTypes = {
 App.defaultProps = {
   isLoggedIn: false,
   displayDrawer: false,
-  logOut: () => {console.log('LogOut called')}
+  logOut: () => {console.log('logOut called')}
 }
 
 export default App;
