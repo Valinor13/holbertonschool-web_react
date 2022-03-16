@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Enzyme from '../../config/setupTests';
+import { shallow, mount } from '../../config/setupTests';
 import Header from './Header';
 
-const shallow = Enzyme.shallow;
 const wrapper = shallow(<Header />);
 
 describe('Test suite for rendering the Header component', () => {

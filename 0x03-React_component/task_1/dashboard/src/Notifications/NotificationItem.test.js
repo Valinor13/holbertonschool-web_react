@@ -1,9 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Enzyme from '../../config/setupTests';
+import { shallow, mount } from '../../config/setupTests';
 import NotificationItem from './NotificationItem';
-
-const shallow = Enzyme.shallow;
 
 describe('Test suite for NotificationItem', () => {
 

@@ -1,10 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Enzyme from '../../config/setupTests';
+import { shallow, mount } from '../../config/setupTests';
 import Notifications from './Notifications';
 import NotificationItem from './NotificationItem';
-
-const shallow = Enzyme.shallow;
 
 const listNotifications = [
   {id: 1, type: 'default', value: 'New course available'},

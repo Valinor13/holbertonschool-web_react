@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Enzyme from '../../config/setupTests';
+import { shallow, mount } from '../../config/setupTests';
 import App from './App';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
@@ -8,9 +8,6 @@ import Login from '../Login/Login';
 import Notifications from '../Notifications/Notifications';
 import Logged from '../Login/Logged';
 import CourseList from '../CourseList/CourseList';
-
-const shallow = Enzyme.shallow;
-const mount = Enzyme.mount;
 
 describe('Test suite for rendering the App component', () => {
   it('test that App renders without crashing', () => {

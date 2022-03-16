@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Enzyme from '../../config/setupTests';
+import { shallow, mount } from '../../config/setupTests';
 import Login from './Login';
 
-const shallow = Enzyme.shallow;
 const wrapper = shallow(<Login />);
 
 describe('Test suite for rendering the Login component', () => {

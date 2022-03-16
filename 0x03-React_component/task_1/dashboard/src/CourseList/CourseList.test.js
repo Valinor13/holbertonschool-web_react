@@ -1,10 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Enzyme from '../../config/setupTests';
+import { shallow, mount } from '../../config/setupTests';
 import CourseList from './CourseList';
 import CourseListRow from './CourseListRow';
-
-const shallow = Enzyme.shallow;
 
 const listCourses = [
   {id: 1, name: 'ES6', credit: 60},
