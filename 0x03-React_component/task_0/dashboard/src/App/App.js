@@ -28,12 +28,10 @@ class App extends Component {
             <div className='menuItem'>
               <p>Your notifications</p>
             </div>
-            {console.log(this.props.displayDrawer)}
             <Notifications displayDrawer={this.props.displayDrawer} listNotifications={listNotifications} />
           </div>
           <Header />
         </div>
-        {console.log(this.props.isLoggedIn)}
         <Logged isLoggedIn={this.props.isLoggedIn} listCourses={listCourses} />
         <Footer />
       </div>
@@ -43,7 +41,7 @@ class App extends Component {
 
 App.propTypes = {
   isLoggedIn: PropTypes.bool,
-  displayDrawer: PropTypes.bool,
+  displayDrawer: PropTypes.bool
 }
 
 App.defaultProps = {
