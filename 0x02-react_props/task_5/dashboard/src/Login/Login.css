@@ -1,0 +1,30 @@
+.App-body {
+  height: 650px;
+}
+
+.login-div {
+  font-size: 25px;
+  font-weight: bold;
+  padding-top: 100px;
+  padding-left: 60px;
+}
+
+label {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.input-text {
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 21px;
+}
+
+.input-button {
+  height: 28px;
+  border-radius: 6px;
+  border-width: 1px;
+  width: 46px;
+  background-color: white;
+  box-shadow: -3px 3px red;
+}

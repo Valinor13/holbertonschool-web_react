@@ -27,4 +27,4 @@ function Notifications({ displayDrawer }) {
   return (<React.Fragment />);
 }
 
-export default Notifications;
+export default Notifications
