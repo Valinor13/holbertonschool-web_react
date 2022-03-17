@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { jest } from '@jest/globals'
+import { jest } from '@jest/globals';
 import { shallow, mount } from '../../config/setupTests';
 import App from './App';
 import Header from '../Header/Header';

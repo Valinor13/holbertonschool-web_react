@@ -19,6 +19,15 @@ describe('Test suite for Notifications', () => {
     ReactDOM.unmountComponentAtNode(div);
   })
 
+  it('test that Notifications.markAsRead calls with the correct id', () => {
+    const mockLog = jest.spyOn(console, 'log');
+    const wrapper = mount(<Notifications />);
+    wrapper.instance().markAsRead(99);
+    expect(mockLog).toHaveBeenCalledWith('Notification 99 has been marked as read');
+    jest.restoreAllMocks();
+    wrapper.unmount();
+  })
+
   it('tests that Notifications renders paragraph when list is empty', () => {
     const wrapper = shallow(<Notifications displayDrawer={true} />);
     const element = wrapper.find('p');

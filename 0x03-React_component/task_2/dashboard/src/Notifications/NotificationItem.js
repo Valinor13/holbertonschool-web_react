@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function NotificationItem({ type, value, html }) {
+function NotificationItem({ markAsRead, type, value, html, id }) {
   return (
-    <li data-notification-type={type} dangerouslySetInnerHTML={html}>
+    <li onClick={() => markAsRead(id)} data-notification-type={type} dangerouslySetInnerHTML={html}>
       {value}
     </li>
   )
@@ -12,11 +12,15 @@ function NotificationItem({ type, value, html }) {
 NotificationItem.propTypes = {
   type: PropTypes.string,
   value: PropTypes.string,
-  html: PropTypes.objectOf(PropTypes.string)
+  html: PropTypes.objectOf(PropTypes.string),
+  id: PropTypes.number,
+  markAsRead: PropTypes.func
 }
 
 NotificationItem.defaultProps = {
-  type: 'default'
+  type: 'default',
+  id: 0,
+  markAsRead: () => console.log(`markAsRead missing`),
 }
 
 export default NotificationItem;
