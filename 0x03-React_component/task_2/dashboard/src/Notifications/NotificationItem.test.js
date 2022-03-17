@@ -14,10 +14,12 @@ describe('Test suite for NotificationItem', () => {
   });
 
   it('test that NotificationItem.markAsRead calls with the correct id', () => {
-    const mockLog = jest.spyOn(Notifications.prototype, 'markAsRead');
-    const wrapper = mount(<NotificationItem markAsRead={Notifications.markAsRead} key={0} type={'default'} value={'test'} id={0} />);
+    const mockRead = jest.spyOn(Notifications.prototype, 'markAsRead');
+    const mockLog = jest.spyOn(console, 'log');
+    const wrapper = mount(<Notifications />);
     wrapper.instance().markAsRead();
-    expect(mockLog).toHaveBeenCalledWith('Notification 0 has been marked as read');
+    expect(mockRead).toHaveBeenCalledWith();
+    expect(mockLog).toHaveBeenCalledWith('Notification undefined has been marked as read')
     jest.restoreAllMocks();
     wrapper.unmount();
   });
