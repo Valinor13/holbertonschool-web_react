@@ -6,6 +6,7 @@ import Notifications from '../Notifications/Notifications';
 import Logged from '../Login/Logged';
 import './App.css';
 import { getLatestNotification } from '../utils/utils';
+import BodySection from '../BodySection/BodySection';
 
 const listCourses = [
   { id: 1, name: 'ES6', credit: 60 },
@@ -46,6 +47,9 @@ class App extends Component {
           <Header />
         </div>
         <Logged isLoggedIn={this.props.isLoggedIn} listCourses={listCourses} />
+        <BodySection title='News from the School'>
+          <p>Some random text</p>
+        </BodySection>
         <Footer />
       </div>
     )
