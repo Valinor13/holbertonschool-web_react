@@ -5,4 +5,5 @@ export const NotificationItemShape = PropTypes.shape({
   html: PropTypes.shape({ __html: PropTypes.string }),
   type: PropTypes.string.isRequired,
   value: PropTypes.string,
+  markAsRead: PropTypes.func,
 });
