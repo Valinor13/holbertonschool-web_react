@@ -1,6 +1,7 @@
 import React from 'react';
 import './Header.css';
 import logo from '../assets/holberton-logo.jpg';
+import WithLogging from '../HOC/WithLogging';
 
 function Header() {
   return (
@@ -13,4 +14,4 @@ function Header() {
   )
 }
 
-export default Header
+export default WithLogging(Header);

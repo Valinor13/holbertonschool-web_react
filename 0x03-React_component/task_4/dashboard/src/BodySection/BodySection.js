@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import WithLogging from '../HOC/WithLogging';
 
 class BodySection extends Component {
   render() {
@@ -21,4 +22,4 @@ BodySection.defaultProps = {
   children: <React.Fragment />,
 }
 
-export default BodySection;
+export default WithLogging(BodySection);

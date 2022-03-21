@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import CourseListRow from './CourseListRow';
 import { CourseShape } from './CourseShape';
 import './CourseList.css';
+import WithLogging from '../HOC/WithLogging';
 
 function CourseList({ listCourses }) {
   return (
@@ -32,4 +33,4 @@ CourseList.defaultProps = {
   listCourses: []
 }
 
-export default CourseList;
+export default WithLogging(CourseList);

@@ -37,24 +37,22 @@ class App extends Component {
 
   render() {
     return (
-      <WithLogging>
-        <div className="App">
-          <div className='full-header'>
-            <div className='full-notifications'>
-              <div className='menuItem'>
-                <p>Your notifications</p>
-              </div>
-              <Notifications displayDrawer={this.props.displayDrawer} listNotifications={listNotifications} />
+      <div className="App">
+        <div className='full-header'>
+          <div className='full-notifications'>
+            <div className='menuItem'>
+              <p>Your notifications</p>
             </div>
-            <Header />
+            <Notifications displayDrawer={this.props.displayDrawer} listNotifications={listNotifications} />
           </div>
-          <Logged isLoggedIn={this.props.isLoggedIn} listCourses={listCourses} />
-          <BodySection title='News from the School'>
-            <p>Some random text</p>
-          </BodySection>
-          <Footer />
+          <Header />
         </div>
-      </WithLogging>
+        <Logged isLoggedIn={this.props.isLoggedIn} listCourses={listCourses} />
+        <BodySection title='News from the School'>
+          <p>Some random text</p>
+        </BodySection>
+        <Footer />
+      </div>
     )
   }
 }
@@ -71,4 +69,4 @@ App.defaultProps = {
   logOut: () => { console.log('logOut called') }
 }
 
-export default App;
+export default WithLogging(App);

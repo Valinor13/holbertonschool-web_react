@@ -1,6 +1,7 @@
 import React from 'react';
 import { getFullYear, getFooterCopy } from '../utils/utils';
 import './Footer.css';
+import WithLogging from '../HOC/WithLogging';
 
 function Footer() {
   return (
@@ -12,4 +13,4 @@ function Footer() {
   )
 }
 
-export default Footer
+export default WithLogging(Footer);

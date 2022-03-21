@@ -5,6 +5,7 @@ import { closeNotifications } from '../utils/utils';
 import { NotificationItemShape } from './NotificationItemShape';
 import './Notifications.css';
 import closeIcon from './close-icon.png';
+import WithLogging from '../HOC/WithLogging';
 
 class Notifications extends Component {
   markAsRead(id) {
@@ -51,4 +52,4 @@ Notifications.defaultProps = {
   listNotifications: []
 }
 
-export default Notifications;
+export default WithLogging(Notifications);

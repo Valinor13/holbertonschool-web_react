@@ -1,44 +1,22 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
-class WithLogging extends Component {
-  componentDidMount() {
-    console.log(`Component ${Component.name} is mounted`);
-  }
-
-  componentWillUnmount() {
-    console.log(`Component ${Component.name} is going to unmount`);
-  }
-
-  logProps() {
-
-    function forwardRef(props, ref) {
-      return <WithLogging {...props} forwardedRef={ref} />;
+function WithLogging(WrappedComponent) {
+  const name = WrappedComponent.displayName || WrappedComponent.name || 'Component';
+  class Logs extends Component {
+    componentDidMount() {
+      console.log(`Component ${name} is mounted`);
     }
-  
-    // Give this component a more helpful display name in DevTools.
-    // e.g. "ForwardRef(logProps(MyComponent))"
-    const name = Component.displayName || Component.name;
-    forwardRef.displayName = `WithLogging(${name})`;
-  
-    return React.forwardRef(forwardRef);
+
+    componentWillUnmount() {
+      console.log(`Component ${name} is going to unmount`);
+    }
+
+    render() {
+      return (<WrappedComponent {...this.props} />);
+    }
   }
-
-  render() {
-    return (
-      <>
-        {this.logProps()}
-      </>
-    )
-  }
-}
-
-Component.propTypes = {
-  name: PropTypes.string,
-}
-
-Component.defaultProps = {
-  name: 'Component',
+  Logs.displayName = `WithLogging(${name})`;
+  return Logs;
 }
 
 export default WithLogging;
