@@ -8,25 +8,17 @@ import closeIcon from './close-icon.png';
 import WithLogging from '../HOC/WithLogging';
 
 class Notifications extends Component {
-  constructor() {
-    super();
-    this.state = {
-      listLength: this.listNotifications.length
-    }
+  constructor(props) {
+    super(props);
+    this.markAsRead = this.markAsRead.bind(this);
   }
 
   markAsRead(id) {
     console.log(`Notification ${id} has been marked as read`)
   }
 
-  shouldComponentUpdate() {
-    if (this.listNotifications.length > this.state.listLength) {
-      this.setState({
-        listLength: this.listNotifications.length
-      })
-      return true;
-    }
-    return false;
+  shouldComponentUpdate(nextProps) {
+    return nextProps.listNotifications.length > this.props.listNotifications.length;
   }
 
   render() {
