@@ -11,22 +11,24 @@ const bodyStyle = {
 
 function CourseListRow({ isHeader, textFirstCell, textSecondCell }) {
   if (isHeader) {
+    const style = headerStyle;
     if (textSecondCell) {
       return (
-        <tr style={headerStyle}>
+        <tr style={style}>
           <th className='col-header'>{textFirstCell}</th>
           <th className='col-header'>{textSecondCell}</th>
         </tr>
       )
     }
     return (
-      <tr style={headerStyle}>
+      <tr style={style}>
         <th colSpan={2}>{textFirstCell}</th>
       </tr>
     )
   }
+  const style = bodyStyle;
   return (
-    <tr style={bodyStyle}>
+    <tr style={style}>
       <td>{textFirstCell}</td>
       <td>{textSecondCell}</td>
     </tr>
