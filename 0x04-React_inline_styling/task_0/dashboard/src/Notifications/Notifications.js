@@ -4,7 +4,7 @@ import NotificationItem from './NotificationItem';
 import { closeNotifications } from '../utils/utils';
 import { NotificationItemShape } from './NotificationItemShape';
 import './Notifications.css';
-import closeIcon from './close-icon.png';
+import closeIcon from '../Assets/close-icon.png';
 
 class Notifications extends Component {
   constructor(props) {
