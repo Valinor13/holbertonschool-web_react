@@ -1,14 +1,15 @@
-import React, { PureComponent } from 'react';
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
-class NotificationItem extends PureComponent {
-  render() {
-    return (
-      <li onClick={() => this.props.markAsRead(this.props.id)} data-notification-type={this.props.type} dangerouslySetInnerHTML={this.props.html}>
-        {this.props.value}
-      </li>
-    )
-  }
+function NotificationItem({ markAsRead, type, value, html, id }) {
+  return (
+    <li onClick={() =>
+      markAsRead(id)}
+      data-notification-type={type}
+      dangerouslySetInnerHTML={html}>
+      {value}
+    </li>
+  )
 }
 
 NotificationItem.propTypes = {
@@ -25,4 +26,4 @@ NotificationItem.defaultProps = {
   markAsRead: () => console.log(`markAsRead missing`),
 }
 
-export default NotificationItem;
+export default memo(NotificationItem);
