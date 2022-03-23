@@ -2,6 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow, mount } from '../../config/setupTests';
 import Header from './Header';
+import { StyleSheetTestUtils } from 'aphrodite';
+
+beforeEach(() => {
+    StyleSheetTestUtils.suppressStyleInjection();
+});
+
+afterEach(() => {
+    StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
+});
 
 const wrapper = shallow(<Header />);
 

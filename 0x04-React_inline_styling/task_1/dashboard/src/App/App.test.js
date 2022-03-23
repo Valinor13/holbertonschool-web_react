@@ -9,6 +9,15 @@ import Login from '../Login/Login';
 import Notifications from '../Notifications/Notifications';
 import Logged from '../Login/Logged';
 import CourseList from '../CourseList/CourseList';
+import { StyleSheetTestUtils } from 'aphrodite';
+
+beforeEach(() => {
+    StyleSheetTestUtils.suppressStyleInjection();
+});
+
+afterEach(() => {
+    StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
+});
 
 describe('Test suite for rendering the App component', () => {
   it('test that App renders without crashing', () => {

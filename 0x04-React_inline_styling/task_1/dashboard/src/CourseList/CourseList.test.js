@@ -3,6 +3,15 @@ import ReactDOM from 'react-dom';
 import { shallow, mount } from '../../config/setupTests';
 import CourseList from './CourseList';
 import CourseListRow from './CourseListRow';
+import { StyleSheetTestUtils } from 'aphrodite';
+
+beforeEach(() => {
+    StyleSheetTestUtils.suppressStyleInjection();
+});
+
+afterEach(() => {
+    StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
+});
 
 const listCourses = [
   {id: 1, name: 'ES6', credit: 60},

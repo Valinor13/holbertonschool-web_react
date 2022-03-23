@@ -3,6 +3,15 @@ import ReactDOM from 'react-dom';
 import { shallow, mount } from '../../config/setupTests';
 import Notifications from './Notifications';
 import NotificationItem from './NotificationItem';
+import { StyleSheetTestUtils } from 'aphrodite';
+
+beforeEach(() => {
+    StyleSheetTestUtils.suppressStyleInjection();
+});
+
+afterEach(() => {
+    StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
+});
 
 const listNotifications = [
   {id: 1, type: 'default', value: 'New course available'},

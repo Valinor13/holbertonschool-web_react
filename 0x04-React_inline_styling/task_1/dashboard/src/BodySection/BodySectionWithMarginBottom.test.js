@@ -3,6 +3,15 @@ import ReactDOM from 'react-dom';
 import { shallow, mount } from '../../config/setupTests';
 import BodySectionWithMarginBottom from './BodySectionWithMarginBottom';
 import BodySection from './BodySection';
+import { StyleSheetTestUtils } from 'aphrodite';
+
+beforeEach(() => {
+    StyleSheetTestUtils.suppressStyleInjection();
+});
+
+afterEach(() => {
+    StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
+});
 
 describe('Test suite for BodySectionWithMarginBottom', () => {
 

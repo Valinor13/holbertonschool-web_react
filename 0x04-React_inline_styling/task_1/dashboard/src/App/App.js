@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { StyleSheet, css } from 'aphrodite';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import Notifications from '../Notifications/Notifications';
 import Logged from '../Login/Logged';
-import './App.css';
 import { getLatestNotification } from '../utils/utils';
 import BodySection from '../BodySection/BodySection';
 
@@ -19,6 +19,24 @@ const listNotifications = [
   { id: 2, type: 'urgent', value: "New resume available" },
   { id: 3, type: 'urgent', html: getLatestNotification() }
 ];
+
+const styles = StyleSheet.create({
+  fullHeader: {
+    display: 'flex',
+    flexDirection: 'row-reverse',
+    justifyContent: 'space-between',
+    borderBottom: '6px solid #E11D3F',
+  },
+  
+  fullNotifications: {
+    marginTop: '3rem',
+    width: '600px',
+  },
+  
+  menuItem: {
+    textAlign: 'right',
+  },
+})
 
 class App extends Component {
   componentDidMount() {
@@ -37,9 +55,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className='full-header'>
-          <div className='full-notifications'>
-            <div className='menuItem'>
+        <div className={css(styles.fullHeader)}>
+          <div className={css(styles.fullNotifications)}>
+            <div className={css(styles.menuItem)}>
               <p>Your notifications</p>
             </div>
             <Notifications displayDrawer={this.props.displayDrawer} listNotifications={listNotifications} />

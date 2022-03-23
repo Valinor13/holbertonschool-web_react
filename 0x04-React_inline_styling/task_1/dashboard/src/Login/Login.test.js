@@ -2,6 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow, mount } from '../../config/setupTests';
 import Login from './Login';
+import { StyleSheetTestUtils } from 'aphrodite';
+
+beforeEach(() => {
+    StyleSheetTestUtils.suppressStyleInjection();
+});
+
+afterEach(() => {
+    StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
+});
 
 const wrapper = shallow(<Login />);
 

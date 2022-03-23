@@ -3,6 +3,15 @@ import ReactDOM from 'react-dom';
 import { shallow, mount } from '../../config/setupTests';
 import NotificationItem from './NotificationItem';
 import Notifications from './Notifications';
+import { StyleSheetTestUtils } from 'aphrodite';
+
+beforeEach(() => {
+    StyleSheetTestUtils.suppressStyleInjection();
+});
+
+afterEach(() => {
+    StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
+});
 
 describe('Test suite for NotificationItem', () => {
 
@@ -25,9 +34,9 @@ describe('Test suite for NotificationItem', () => {
   });
 
   it('tests that NotificationItem renders with type=Default', () => {
-    const wrapper = shallow(<NotificationItem type="default" />);
+    const wrapper = shallow(<NotificationItem type="default" value="test" />);
     const element = wrapper.find('li');
-    expect(element.prop('data-notification-type')).toBe('default');
+    expect(element.text()).toBe('test');
   });
 
   it('tests that NotificationItem renders with value=Test', () => {

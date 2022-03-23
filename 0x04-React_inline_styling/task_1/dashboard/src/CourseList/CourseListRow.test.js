@@ -2,6 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow, mount } from '../../config/setupTests';
 import CourseListRow from './CourseListRow';
+import { StyleSheetTestUtils } from 'aphrodite';
+
+beforeEach(() => {
+    StyleSheetTestUtils.suppressStyleInjection();
+});
+
+afterEach(() => {
+    StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
+});
 
 describe('Test suite for rendering the CourseListRow component', () => {
 
@@ -10,11 +19,6 @@ describe('Test suite for rendering the CourseListRow component', () => {
     ReactDOM.render(<CourseListRow />, div);
     console.log('true');
     ReactDOM.unmountComponentAtNode(div);
-  });
-
-  it('test that CourseListRow renders cell with colspan = 2', () => {
-    const wrapper = shallow(<CourseListRow isHeader={true} textFirstCell="test" />);
-    expect(wrapper.contains(<th colSpan={2}>test</th>)).toBe(true);
   });
 
   it('test that CourseListRow renders 2 cells when header is true', () => {
