@@ -8,6 +8,13 @@ const styles = StyleSheet.create({
   },
   urgent: {
     color: '#e11d3f',
+  },
+  small: {
+    '@media (max-width: 900px)': {
+      borderBottom: "1.5px solid black",
+      listStyleType: "none",
+      padding: "10px 8px"
+    }
   }
 })
 
@@ -21,7 +28,7 @@ function NotificationItem({ markAsRead, type, value, html, id }) {
   }
 
   return (
-    <li className={css(isUrgent(type) ? styles.urgent : styles.default)}
+    <li className={css(isUrgent(type) ? styles.urgent : styles.default, styles.small)}
       onClick={() => markAsRead(id)}
       dangerouslySetInnerHTML={html}>
       {value}

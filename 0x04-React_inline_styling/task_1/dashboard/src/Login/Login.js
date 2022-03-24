@@ -27,17 +27,36 @@ const styles = StyleSheet.create({
     width: '46px',
     backgroundColor: 'white',
     boxShadow: '-3px 3px red',
+  },
+  smallLogin: {
+    '@media (max-width: 900px)': {
+      marginLeft: "auto",
+      marginRight: "auto",
+      height: "auto",
+      display: "flex",
+      flexDirection: "column",
+      paddingTop: '0px',
+      paddingLeft: '0px',
+      fontSize: "18px",
+      fontWeight: "normal",
+    }
+  },
+  smallForm: {
+    '@media (max-width: 900px)': {
+      display: "flex",
+      flexDirection: "column",
+    }
   }
 });
 
 function Login() {
   return (
-    <main className={css(styles.appBody)}>
-      <div className={css(styles.loginDiv)}>
+    <div id='appBody' className={css(styles.appBody, styles.smallLogin)}>
+      <div className={css(styles.loginDiv, styles.smallLogin)}>
         <p>
           Login to access the full dashboard
         </p>
-        <form>
+        <form className={css(styles.smallForm)}>
           <label className={css(styles.label)}>
             Email:
             <input className={css(styles.inputText)} type="text" name="email" />
@@ -49,7 +68,7 @@ function Login() {
           <button className={css(styles.inputButton)} type="submit">Ok</button>
         </form>
       </div>
-    </main>
+    </div>
   )
 }
 

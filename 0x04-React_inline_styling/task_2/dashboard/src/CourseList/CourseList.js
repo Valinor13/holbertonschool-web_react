@@ -16,13 +16,26 @@ const styles = StyleSheet.create({
     width: '100%',
     fontSize: '25px',
     fontWeight: 'bolder',
-  }
+  },
+  smallTableDiv: {
+    '@media (max-width: 900px)': {
+      padding: "0px",
+      height: "auto",
+      fontSize: "18px",
+    }
+  },
+  smallTable: {
+    '@media (max-width: 900px)': {
+      fontSize: "18px",
+      width: "300px"
+    }
+  },
 });
 
 function CourseList({ listCourses }) {
   return (
-    <div className={css(styles.tableDiv)}>
-      <table className={css(styles.table)}>
+    <div className={css(styles.tableDiv, styles.smallTableDiv)}>
+      <table className={css(styles.table, styles.smallTable)}>
         <thead>
           <CourseListRow textFirstCell="Available courses" isHeader={true} />
           <CourseListRow textFirstCell="Course name" textSecondCell="Credit" isHeader={true} />

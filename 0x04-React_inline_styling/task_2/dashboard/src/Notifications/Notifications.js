@@ -26,6 +26,23 @@ const styles = StyleSheet.create({
     border: 'none',
     height: '20px',
   },
+  notificationsSmallDiv: {
+    '@media (max-width: 900px)': {
+      border: "none",
+      fontSize: "20px",
+      paddingBottom: "10000px"
+    }
+  },
+  notificationsSmall: {
+    '@media (max-width: 900px)': {
+      padding: "0px",
+    }
+  },
+  smallUl: {
+    '@media (max-width: 900px)': {
+      padding: "0px",
+    }
+  },
 });
 
 class Notifications extends Component {
@@ -45,8 +62,8 @@ class Notifications extends Component {
   render() {
     if (this.props.displayDrawer) {
       return (
-        <div className={css(styles.notificationsDiv)}>
-          <div className={css(styles.notifications)}>
+        <div className={css(styles.notificationsDiv, styles.notificationsSmallDiv)}>
+          <div className={css(styles.notifications, styles.notificationsSmall)}>
             {
               this.props.listNotifications.length === 0 ?
                 <p>No new notification for now</p> :
@@ -54,7 +71,7 @@ class Notifications extends Component {
                   <p>
                     Here is the list of notifications
                   </p>
-                  <ul>
+                  <ul className={css(styles.smallUl)}>
                     {
                       this.props.listNotifications.map((item) => {
                         return (<NotificationItem markAsRead={this.markAsRead} key={item.id} type={item.type} value={item.value} html={item.html} id={item.id} />)

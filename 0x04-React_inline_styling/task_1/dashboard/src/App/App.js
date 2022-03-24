@@ -27,14 +27,28 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     borderBottom: '6px solid #E11D3F',
   },
-  
   fullNotifications: {
     marginTop: '3rem',
     width: '600px',
   },
-  
   menuItem: {
     textAlign: 'right',
+  },
+  smallHeader: {
+    '@media (max-width: 900px)': {
+      flexWrap: 'wrap',
+      justifyContent: 'center'
+    }
+  },
+  smallBody: {
+    '@media (max-width: 900px)': {
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      width: "300px",
+      marginLeft: "auto",
+      marginRight: "auto",
+    }
   },
 })
 
@@ -55,7 +69,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className={css(styles.fullHeader)}>
+        <div className={css(styles.fullHeader, styles.smallHeader)}>
           <div className={css(styles.fullNotifications)}>
             <div className={css(styles.menuItem)}>
               <p>Your notifications</p>
@@ -64,10 +78,12 @@ class App extends Component {
           </div>
           <Header />
         </div>
-        <Logged isLoggedIn={this.props.isLoggedIn} listCourses={listCourses} />
-        <BodySection title='News from the School'>
-          <p>Some random text</p>
-        </BodySection>
+        <div className={css(styles.smallBody)}>
+          <Logged isLoggedIn={this.props.isLoggedIn} listCourses={listCourses} />
+          <BodySection title='News from the School'>
+            <p>Some random text</p>
+          </BodySection>
+        </div>
         <Footer />
       </div>
     )

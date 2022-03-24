@@ -24,7 +24,7 @@ describe('Test suite for rendering the Login component', () => {
   });
 
   it('test that Login renders with App-body', () => {
-    const element = wrapper.find('main');
+    const element = wrapper.find('div#appBody');
     expect(element.length).toBe(1);
   });
   
