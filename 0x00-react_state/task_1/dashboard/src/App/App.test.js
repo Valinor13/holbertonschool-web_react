@@ -7,7 +7,6 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import Login from "../Login/Login";
 import Notifications from "../Notifications/Notifications";
-import Logged from "../Login/Logged";
 import CourseList from "../CourseList/CourseList";
 import { StyleSheetTestUtils } from "aphrodite";
 
@@ -70,7 +69,7 @@ describe("Test suite for rendering the App component", () => {
 
   it("test that App renders with Login component", () => {
     const wrapper = shallow(<App isLoggedIn={false} displayDrawer={true} />);
-    const element = wrapper.find(Logged, Login);
+    const element = wrapper.find(Login);
     expect(element.length).toBe(1);
   });
 
@@ -100,7 +99,7 @@ describe("Test suite for rendering the App component", () => {
 
   it("test that App renders with CourseList component", () => {
     const wrapper = shallow(<App isLoggedIn={true} displayDrawer={true} />);
-    const element = wrapper.find(Logged, CourseList);
+    const element = wrapper.find(CourseList);
     expect(element.length).toBe(1);
   });
 });

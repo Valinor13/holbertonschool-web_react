@@ -30,7 +30,7 @@ describe('Test suite for rendering the Login component', () => {
   
   it('test that Login renders with input tag', () => {
     const element = wrapper.find('input');
-    expect(element.length).toBe(2);
+    expect(element.length).toBe(3);
   });
   
   it('test that Login renders with label tag', () => {
