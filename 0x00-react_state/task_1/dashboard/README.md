@@ -1,13 +1,13 @@
-Dashboard - React state
+Dashboard - React intro
 =============
 
-The React state repository contains various states of progress in learning to handle state changes in the react app Dashboard, including a test suite using enzyme.
-
-The first task of this project uses task_4 of the react inline styling directory as a starting point. Project in progress:
+This directory is the last step in the react intro. Here we create our own webpack dev server with configuration for loading our jsx/css/image files.
 
 1. Config folder contains the webpack config file and the Enzyme config for testing.
 1. Dist folder contains the html, manifest, and icon image.
 1. Src folder contains jsx, css, and image files for the application.
+
+
 
 Installation
 -----------
@@ -36,4 +36,4 @@ npm run test
 Contributing
 ------------
 
-[Contributing](https://www.github.com/Valinor13)
+[Contributing](github.com/Valinor13)
