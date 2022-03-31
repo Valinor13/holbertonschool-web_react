@@ -16,7 +16,7 @@ describe('Test suite for BodySection', () => {
 
   it('tests BodySection renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<BodySection />, div);
+    ReactDOM.render(<BodySection title='test' />, div);
     console.log('true');
     ReactDOM.unmountComponentAtNode(div);
   })
