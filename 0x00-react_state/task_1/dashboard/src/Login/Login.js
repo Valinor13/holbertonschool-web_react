@@ -82,7 +82,7 @@ class Login extends Component {
   }
 
   handleEnableSubmit() {
-    if (this.state.email !== '' && this.state.password !== '') {
+    if (this.state.email !== "" && this.state.password !== "") {
       this.setState({
         enableSubmit: true,
       });
@@ -101,6 +101,7 @@ class Login extends Component {
             <label className={css(styles.label)}>
               Email:
               <input
+                id="email"
                 className={css(styles.inputText)}
                 type="text"
                 name="email"
@@ -114,6 +115,7 @@ class Login extends Component {
             <label className={css(styles.label)}>
               Password:
               <input
+                id="password"
                 className={css(styles.inputText)}
                 type="text"
                 name="password"
@@ -125,6 +127,7 @@ class Login extends Component {
               />
             </label>
             <input
+              id="submit"
               className={css(styles.inputButton)}
               disabled={!this.state.enableSubmit}
               type="submit"

@@ -6,10 +6,9 @@ import Footer from "../Footer/Footer";
 import Notifications from "../Notifications/Notifications";
 import { getLatestNotification } from "../utils/utils";
 import BodySection from "../BodySection/BodySection";
-import BodySectionWithMarginBottom from "../BodySection/BodySectionWithMarginBottom";
+import BodySectionWithMarginBottom from '../BodySection/BodySectionWithMarginBottom';
 import CourseList from "../CourseList/CourseList";
 import Login from "../Login/Login";
-import AppContext from "./AppContext";
 
 const listCourses = [
   { id: 1, name: "ES6", credit: 60 },
@@ -53,30 +52,9 @@ class App extends Component {
     super(props);
     this.handleHideDrawer = this.handleHideDrawer.bind(this);
     this.handleDisplayDrawer = this.handleDisplayDrawer.bind(this);
-    this.logIn = this.logIn.bind(this);
-    this.logOut = this.logOut.bind(this);
     this.state = {
       displayDrawer: false,
-      user: {
-        email: '',
-        password: '',
-        isLoggedIn: false,
-      },
-      logOut: () => this.logOut(),
     };
-  }
-
-  componentDidMount() {
-    document.addEventListener("keydown", (event) => {
-      if (event.ctrlKey && event.key === "h") {
-        console.log("Logging you out");
-        this.logOut();
-      }
-    });
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener("keydown", (event) => {});
   }
 
   handleDisplayDrawer = () => {
@@ -91,58 +69,63 @@ class App extends Component {
     });
   };
 
-  logIn(email, password) {
-    this.setState({
-      user: {
-        email,
-        password,
-        isLoggedIn: true,
-      },
+  componentDidMount() {
+    document.addEventListener("keydown", (event) => {
+      if (event.ctrlKey && event.key === "h") {
+        console.log("Logging you out");
+        this.props.logOut();
+      }
     });
   }
 
-  logOut() {
-    this.setState({
-      user: {
-        email: "",
-        password: "",
-        isLoggedIn: false,
-      },
-    });
+  componentWillUnmount() {
+    document.removeEventListener("keydown", (event) => {});
   }
 
   render() {
     return (
-      <AppContext.Provider value={this.state}>
-        <div className="App">
-          <div className={css(styles.fullHeader, styles.smallHeader)}>
-            <Notifications
-              handleHideDrawer={this.handleHideDrawer}
-              handleDisplayDrawer={this.handleDisplayDrawer}
-              displayDrawer={this.state.displayDrawer}
-              listNotifications={listNotifications}
-            />
-            <Header />
-          </div>
-          <div className={css(styles.smallBody)}>
-            {this.state.user.isLoggedIn ? (
-              <BodySectionWithMarginBottom title="Course List">
-                <CourseList listCourses={listCourses} />
-              </BodySectionWithMarginBottom>
-            ) : (
-              <BodySectionWithMarginBottom title="Log in to continue">
-                <Login logIn={this.logIn} />
-              </BodySectionWithMarginBottom>
-            )}
-            <BodySection title="News from the School">
-              <p>Some random text</p>
-            </BodySection>
-          </div>
-          <Footer />
+      <div className="App">
+        <div className={css(styles.fullHeader, styles.smallHeader)}>
+          <Notifications
+            handleHideDrawer={this.handleHideDrawer}
+            handleDisplayDrawer={this.handleDisplayDrawer}
+            displayDrawer={this.state.displayDrawer}
+            listNotifications={listNotifications}
+          />
+          <Header />
         </div>
-      </AppContext.Provider>
+        <div className={css(styles.smallBody)}>
+          {this.props.isLoggedIn ? (
+            <BodySectionWithMarginBottom title="Course List">
+              <CourseList listCourses={listCourses} />
+            </BodySectionWithMarginBottom>
+          ) : (
+            <BodySectionWithMarginBottom title="Log in to continue">
+              <Login />
+            </BodySectionWithMarginBottom>
+          )}
+          <BodySection title="News from the School">
+            <p>Some random text</p>
+          </BodySection>
+        </div>
+        <Footer />
+      </div>
     );
   }
 }
+
+App.propTypes = {
+  isLoggedIn: PropTypes.bool,
+  // displayDrawer: PropTypes.bool,
+  logOut: PropTypes.func,
+};
+
+App.defaultProps = {
+  isLoggedIn: false,
+  // displayDrawer: false,
+  logOut: () => {
+    console.log("logOut called");
+  },
+};
 
 export default App;
