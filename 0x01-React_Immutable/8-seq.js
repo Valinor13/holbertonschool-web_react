@@ -10,6 +10,8 @@ export default function printBestStudents(object) {
     if (object[key].score >= 70) {
       object[key].firstName = object[key].firstName.charAt(0).toUpperCase() + object[key].firstName.slice(1);
       object[key].lastName = object[key].lastName.charAt(0).toUpperCase() + object[key].lastName.slice(1);
+    } else {
+      delete object[key];
     }
   }
   console.log(Seq(object).toJS());
