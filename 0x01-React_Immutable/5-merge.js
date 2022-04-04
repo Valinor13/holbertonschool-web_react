@@ -13,5 +13,5 @@ export function concatElements(page1, page2) {
 // @page2: Second object to merge
 // @return: merged list
 export function mergeElements(page1, page2) {
-  return List(Map().merge(page2, page1));
+  return List(Map().merge(page1, page2));
 }
