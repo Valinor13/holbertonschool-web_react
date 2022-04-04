@@ -4,6 +4,6 @@ import { Map } from 'immutable';
 // @page1: First object to merge
 // @page2: Second object to merge
 // @return: deeply merged Map
-export function mergeDeeplyElements(page1, page2) {
+export default function mergeDeeplyElements(page1, page2) {
   return Map(page1).mergeDeep(page2);
 }
