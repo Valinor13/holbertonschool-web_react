@@ -8,7 +8,6 @@ export function concatElements(page1, page2) {
   return List(page1.concat(page2));
 }
 
-
 // mergeElements - accepts two objects and returns the merged list
 // @page1: First object to merge
 // @page2: Second object to merge
