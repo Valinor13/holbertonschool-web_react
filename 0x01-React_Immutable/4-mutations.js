@@ -1,7 +1,6 @@
 import { Map } from 'immutable';
 
 // export Map object
-
 export const map = Map({
   1: 'Liam',
   2: 'Noah',
@@ -10,3 +9,7 @@ export const map = Map({
   5: 'Jacob',
   6: 'Lucas',
 });
+
+// export another map object
+export const map2 = map.set(2, 'Benjamin').update(4, 'Oliver');
+
