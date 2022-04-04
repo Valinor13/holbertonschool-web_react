@@ -1,10 +1,13 @@
-import { seq } from 'immutable';
+import { seq } from "immutable";
 
-// printBestStudents - accepts an object with a key of score, and number value. Filters out scores < 70
+// printBestStudents - accepts an object with a key of score, and number value...
+// Filters out scores < 70..
+// prints to the console the remaining students with their firstName and lastName capitalized.
 // @object: object with key of score, and number value
-// @return: Seq of objects with key of score, and number value greater than 69
+// @return: none
 export default function printBestStudents(object) {
-  return seq(object).filter((item) => {
-    return item.get('score') > 69;
+  const students = seq(object).filter(student => student.get('score') >= 70);
+  students.forEach(student => {
+    console.log(`${student.get('firstName').toUpperCase()} ${student.get('lastName').toUpperCase()}`);
   });
 }
