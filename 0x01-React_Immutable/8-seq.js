@@ -9,13 +9,13 @@ export default function printBestStudents(object) {
   const students = {};
   for (const key in object) {
     if (object[key].score >= 70) {
-      students[key].firstName =
-        object[key].firstName.charAt(0).toUpperCase() +
-        object[key].firstName.slice(1);
-      students[key].lastName =
-        object[key].lastName.charAt(0).toUpperCase() +
-        object[key].lastName.slice(1);
-      students[key].score = object[key].score;
+      students[key] = {
+        firstName: object[key].firstName.charAt(0).toUpperCase()
+          + object[key].firstName.slice(1),
+        lastName: object[key].lastName.charAt(0).toUpperCase()
+          + object[key].lastName.slice(1),
+        score: object[key].score,
+      };
     }
   }
   console.log(Seq(students).toJS());
