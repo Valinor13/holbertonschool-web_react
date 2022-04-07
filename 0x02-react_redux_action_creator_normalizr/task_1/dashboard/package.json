@@ -2,11 +2,8 @@
   "name": "dashboard",
   "version": "1.0.0",
   "description": "",
-  "homepage": "https://valinor13.github.io/holbertonschool-web_react/",
+  "main": "index.js",
   "scripts": {
-    "build": "react-scripts build",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "webpack-dev-server --mode development --config config/webpack.config.js",
     "test": "jest",
     "test-watch": "jest --watch"
@@ -24,7 +21,6 @@
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.6",
     "file-loader": "^6.2.0",
-    "gh-pages": "^3.2.3",
     "image-webpack-loader": "^8.1.0",
     "style-loader": "^3.3.1",
     "webpack": "^5.70.0",
@@ -36,6 +32,7 @@
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
     "aphrodite": "^2.4.0",
+    "normalizr": "^3.6.2",
     "prop-types": "^15.8.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
@@ -47,17 +44,5 @@
       "\\.(css|scss)$": "<rootDir>/__mocks__/styleMock.js",
       "\\.(jpg|jpeg|png|gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js"
     }
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
   }
 }
