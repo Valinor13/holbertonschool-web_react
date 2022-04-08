@@ -1,15 +1,15 @@
-const { Actions } = require("./courseActionTypes");
+const { CourseActions } = require("./courseActionTypes");
 
 export function selectCourse(index) {
   return {
-    type: Actions.SELECT_COURSE,
+    type: CourseActions.SELECT_COURSE,
     index,
   };
 }
 
 export function unselectCourse(index) {
   return {
-    type: Actions.UNSELECT_COURSE,
+    type: CourseActions.UNSELECT_COURSE,
     index,
   };
 }

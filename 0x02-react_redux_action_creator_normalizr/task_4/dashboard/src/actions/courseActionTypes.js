@@ -1,4 +1,4 @@
-export const Actions = {
+export const CourseActions = {
   SELECT_COURSE: 'SELECT_COURSE',
   UNSELECT_COURSE: 'UNSELECT_COURSE',
 }
