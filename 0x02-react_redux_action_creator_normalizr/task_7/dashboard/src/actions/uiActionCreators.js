@@ -17,13 +17,13 @@ export function logout() {
   };
 }
 
-export function loginSuccess() {
+export async function loginSuccess() {
   return {
     type: UIActionType.LOGIN_SUCCESS,
   };
 }
 
-export function logoutSuccess() {
+export async function logoutSuccess() {
   return {
     type: UIActionType.LOGOUT_SUCCESS,
   };
