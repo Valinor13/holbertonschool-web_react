@@ -1,5 +1,5 @@
 const { UIActionType } = require("./uiActionTypes");
-import fetch from 'node-fetch';
+const fetch = require('node-fetch');
 
 export function login(email, password) {
   return {
