@@ -1,5 +1,5 @@
-const { CourseActionType } = require("./courseActionTypes");
-const { bindActionCreators } = require("redux");
+import { bindActionCreators } from "redux";
+import { CourseActionType } from "./courseActionTypes";
 
 export function selectCourse(index) {
   return {
