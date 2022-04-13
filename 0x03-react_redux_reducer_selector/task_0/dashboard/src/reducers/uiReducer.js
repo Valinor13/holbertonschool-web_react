@@ -1,4 +1,4 @@
-const UIActionType = require("../actions/uiActionTypes");
+import { UIActionType } from "../actions/uiActionTypes";
 
 const defaultState = {
   isUserLoggedIn: false,
@@ -6,7 +6,7 @@ const defaultState = {
   user: {},
 };
 
-export function uiReducer(state = defaultState, action) {
+export default function uiReducer(state = defaultState, action) {
   switch (action.type) {
     case UIActionType.LOGIN_SUCCESS:
       return {

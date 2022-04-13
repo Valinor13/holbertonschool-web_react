@@ -1,4 +1,4 @@
-import { uiReducer } from "./uiReducer";
+import uiReducer from "./uiReducer";
 
 describe("Test suite for uiReducer", () => {
   it(`test verifying the state returned by the uiReducer function equals
