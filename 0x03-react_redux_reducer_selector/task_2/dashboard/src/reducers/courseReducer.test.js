@@ -1,9 +1,8 @@
-import { courseReducer } from "./courseReducer";
+import courseReducer from "./courseReducer";
 
 describe("Test suite for courseReducer", () => {
   it("test that the default state returns an empty array", () => {
-    const state = [];
-    expect(courseReducer(undefined, {})).toEqual(state);
+    expect(courseReducer(undefined, { type: undefined })).toEqual([]);
   });
 
   it(`test that FETCH_COURSE_SUCCESS returns the data passed`, () => {
@@ -27,8 +26,8 @@ describe("Test suite for courseReducer", () => {
         credit: 40,
       },
     ];
-    const action = { type: "FETCH_COURSE_SUCCESS", data };
-    expect(courseReducer(undefined, action)).toEqual(data);
+    const action = { type: "FETCH_COURSE_SUCCESS" };
+    expect(courseReducer(data, action)).toEqual(data);
   });
 
   it(`test that SELECT_COURSE returns the data with the right item updated`, () => {

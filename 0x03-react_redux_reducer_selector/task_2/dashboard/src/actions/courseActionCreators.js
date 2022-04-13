@@ -1,5 +1,5 @@
-const { CourseActionType } = require("./courseActionTypes");
-const { bindActionCreators } = require("redux");
+import { bindActionCreators } from "redux";
+import { CourseActionType } from "./courseActionTypes";
 
 export function selectCourse(index) {
   return {
@@ -15,5 +15,16 @@ export function unselectCourse(index) {
   };
 }
 
-export const boundCourseActions = () =>
-  bindActionCreators({ selectCourse, unselectCourse }, dispatch);
+export function fetchCourseSuccess(data) {
+  return {
+    type: CourseActionType.FETCH_COURSE_SUCCESS,
+    data,
+  };
+}
+
+export const boundCourseActions = () => {
+  bindActionCreators(
+    { selectCourse, unselectCourse, fetchCourseSuccess },
+    dispatch
+  );
+};

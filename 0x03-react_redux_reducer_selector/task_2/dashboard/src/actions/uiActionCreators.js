@@ -1,5 +1,5 @@
-const { UIActionType } = require("./uiActionTypes");
-const fetch = require('node-fetch');
+import fetch from 'node-fetch';
+import { UIActionType } from "./uiActionTypes";
 
 export function login(email, password) {
   return {
@@ -17,13 +17,13 @@ export function logout() {
   };
 }
 
-export async function loginSuccess() {
+export function loginSuccess() {
   return {
     type: UIActionType.LOGIN_SUCCESS,
   };
 }
 
-export async function logoutSuccess() {
+export function logoutSuccess() {
   return {
     type: UIActionType.LOGOUT_SUCCESS,
   };
@@ -31,7 +31,7 @@ export async function logoutSuccess() {
 
 // fetch API /login-succes.json on success dispatch loginSuccess() on failure dispatch loginFailure()
 export function loginRequest(email, password) {
-  () => dispatch(login(email, password))();
+  dispatch(login(email, password));
   return fetch("/login-success.json")
     .then(response => response.json())
     .then(json => {
