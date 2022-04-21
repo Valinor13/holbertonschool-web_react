@@ -1,14 +1,14 @@
-const { Map } = require("immutable");
+const { Map, toJS } = require("immutable");
 import { notificationNormalizer } from "../schema/notifications";
 import {
   NotificationTypeFilters,
   NotificationActionType,
 } from "../actions/notificationActionTypes";
 
-const defaultState = Map({
+const defaultState = {
   notifications: [],
   filter: NotificationTypeFilters.DEFAULT,
-});
+};
 
 export default function notificationReducer(state = defaultState, action) {
   switch (action.type) {

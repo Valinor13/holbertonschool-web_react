@@ -1,4 +1,4 @@
-const { Map } = require("immutable");
+const { Map, toJS } = require("immutable");
 import { UIActionType } from "../actions/uiActionTypes";
 
 const defaultState = {
@@ -14,26 +14,26 @@ export default function uiReducer(state = defaultState, action) {
       return mapState.set({
         isUserLoggedIn: true,
         user: action.user,
-      });
+      }).toJS();
     case UIActionType.LOGIN_FAILURE:
       return mapState.set({
         isUserLoggedIn: false,
         user: {},
-      });
+      }).toJS();
     case UIActionType.LOGOUT:
       return mapState.set({
         isUserLoggedIn: false,
         user: {},
-      });
+      }).toJS();
     case UIActionType.DISPLAY_NOTIFICATION_DRAWER:
       return mapState.set({
         isNotificationDrawerVisible: true,
-      });
+      }).toJS();
     case UIActionType.HIDE_NOTIFICATION_DRAWER:
       return mapState.set({
         isNotificationDrawerVisible: false,
-      });
+      }).toJS();
     default:
-      return mapState;
+      return state;
   }
 }

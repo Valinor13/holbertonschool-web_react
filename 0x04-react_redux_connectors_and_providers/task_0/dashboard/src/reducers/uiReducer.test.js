@@ -1,4 +1,3 @@
-import { Map } from "immutable";
 import uiReducer from "./uiReducer";
 
 describe("Test suite for uiReducer", () => {
