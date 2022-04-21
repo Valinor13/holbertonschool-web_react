@@ -2,7 +2,7 @@ import { bindActionCreators } from "redux";
 import { NotificationActionType } from "./notificationActionTypes";
 
 // function markAsRead accepts index and returns an action
-export function markAsRead(index) {
+export const markAsRead = (index) => {
   return {
     type: NotificationActionType.MARK_AS_READ,
     index,
@@ -10,7 +10,7 @@ export function markAsRead(index) {
 }
 
 // function setNotificationFilter accepts filter and returns an action
-export function setNotificationFilter(filter) {
+export const setNotificationFilter = (filter) => {
   return {
     type: NotificationActionType.SET_TYPE_FILTER,
     filter,

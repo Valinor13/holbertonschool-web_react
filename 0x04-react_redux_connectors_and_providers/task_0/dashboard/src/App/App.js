@@ -149,7 +149,7 @@ class App extends Component {
             <Header />
           </div>
           <div className={css(styles.smallBody)}>
-            {this.state.user.isLoggedIn ? (
+            {this.props.isLoggedIn ? (
               <BodySectionWithMarginBottom title="Course List">
                 <CourseList listCourses={listCourses} />
               </BodySectionWithMarginBottom>
@@ -175,4 +175,6 @@ const mapStatetoProps = (state) => {
   }
 }
 
-export default App;
+
+
+export default connect(mapStatetoProps, boundUIActions)(App);
