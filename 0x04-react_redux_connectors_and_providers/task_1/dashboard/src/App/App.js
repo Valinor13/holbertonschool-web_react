@@ -175,6 +175,4 @@ const mapStatetoProps = (state) => {
   }
 }
 
-
-
 export default connect(mapStatetoProps, boundUIActions)(App);
