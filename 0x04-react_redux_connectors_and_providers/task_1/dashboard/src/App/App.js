@@ -10,7 +10,7 @@ import BodySectionWithMarginBottom from '../BodySection/BodySectionWithMarginBot
 import CourseList from '../CourseList/CourseList';
 import Login from '../Login/Login';
 import AppContext from './AppContext';
-import { boundUIActions } from '../actions/uiActionCreators';
+import { displayNotificationDrawer, hideNotificationDrawer, loginRequest } from '../actions/uiActionCreators';
 
 const listCourses = [
   { id: 1, name: 'ES6', credit: 60 },
@@ -142,7 +142,7 @@ class App extends Component {
             <Notifications
               handleHideDrawer={this.handleHideDrawer}
               handleDisplayDrawer={this.handleDisplayDrawer}
-              displayDrawer={this.state.displayDrawer}
+              displayDrawer={this.props.displayDrawer}
               listNotifications={this.state.listNotifications}
               markNotificationAsRead={this.markNotificationAsRead}
             />
@@ -172,7 +172,15 @@ class App extends Component {
 const mapStatetoProps = (state) => {
   return {
     isLoggedIn: state.isUserLoggedIn,
+    displayDrawer: state.isNotificationDrawerVisible,
   }
 }
 
-export default connect(mapStatetoProps, boundUIActions)(App);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    displayDrawer: dispatch(displayNotificationDrawer()),
+    hideDrawer: dispatch(hideNotificationDrawer()),
+  }
+}
+
+export default connect(mapStatetoProps, mapDispatchToProps)(App);
