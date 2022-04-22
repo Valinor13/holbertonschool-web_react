@@ -10,7 +10,7 @@ import BodySectionWithMarginBottom from '../BodySection/BodySectionWithMarginBot
 import CourseList from '../CourseList/CourseList';
 import Login from '../Login/Login';
 import AppContext from './AppContext';
-import { displayNotificationDrawer, hideNotificationDrawer, loginRequest } from '../actions/uiActionCreators';
+import { displayNotificationDrawer, hideNotificationDrawer } from '../actions/uiActionCreators';
 
 const listCourses = [
   { id: 1, name: 'ES6', credit: 60 },
@@ -54,14 +54,11 @@ let isMounted = false;
 class App extends Component {
   constructor() {
     super();
-    this.handleHideDrawer = this.handleHideDrawer.bind(this);
-    this.handleDisplayDrawer = this.handleDisplayDrawer.bind(this);
     this.logIn = this.logIn.bind(this);
     this.logOut = this.logOut.bind(this);
     this.markNotificationAsRead = this.markNotificationAsRead.bind(this);
     this.state = {
       listNotifications,
-      displayDrawer: false,
       user: {
         email: '',
         password: '',
@@ -99,18 +96,6 @@ class App extends Component {
     });
   }
 
-  handleDisplayDrawer = () => {
-    this.setState({
-      displayDrawer: true,
-    });
-  };
-
-  handleHideDrawer = () => {
-    this.setState({
-      displayDrawer: false,
-    });
-  };
-
   logIn(email, password) {
     this.setState({
       user: {
@@ -140,8 +125,8 @@ class App extends Component {
         <div className="App">
           <div className={css(styles.fullHeader, styles.smallHeader)}>
             <Notifications
-              handleHideDrawer={this.handleHideDrawer}
-              handleDisplayDrawer={this.handleDisplayDrawer}
+              handleHideDrawer={this.props.toggleHideDrawer}
+              handleDisplayDrawer={this.props.toggleDisplayDrawer}
               displayDrawer={this.props.displayDrawer}
               listNotifications={this.state.listNotifications}
               markNotificationAsRead={this.markNotificationAsRead}
@@ -178,8 +163,8 @@ const mapStatetoProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    displayDrawer: dispatch(displayNotificationDrawer()),
-    hideDrawer: dispatch(hideNotificationDrawer()),
+    toggleDisplayDrawer: dispatch(displayNotificationDrawer()),
+    toggleHideDrawer: dispatch(hideNotificationDrawer()),
   }
 }
 
